@@ -73,7 +73,7 @@ if test_image is not None:
     
     # Save the uploaded image to a temporary file
     with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp_file:
-        tmp_file.write(test_image.getbuffer())
+        tmp_file.write(test_image.read())
         tmp_image_path = tmp_file.name
     
     with st.spinner("Detecting Anomalies ..."):
