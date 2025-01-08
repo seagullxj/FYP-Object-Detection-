@@ -17,12 +17,7 @@ def run_yolov7_detection(image_path):
     
     # Create a temporary directory to store the output
     output_dir = "results"
-    print(image_path)
-    if os.path.exists(image_path):
-        print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO")
-        # raise FileNotFoundError(f"Temporary image file {image_path} does not exist.")
-    if os.path.exists("yolov7/runs/train/yolov710/weights/best.pt"):
-        print("BYEEEEEEEEEEEEE")
+
     # Call the YOLOv7 detection script via subprocess
     command = [
         "python", detect_script, 
@@ -30,19 +25,10 @@ def run_yolov7_detection(image_path):
         "--conf", "0.5", 
         "--img-size", "640", 
         "--source", image_path, 
+        "--project", output_dir,  # Save results in the temporary output directory
+        "--name", "test_results",
         "--exist-ok"  # Allow overwriting existing results
     ]
-
-    #     command = [
-    #     "python", detect_script, 
-    #     "--weights", "yolov7/runs/train/yolov710/weights/best.pt", 
-    #     "--conf", "0.5", 
-    #     "--img-size", "640", 
-    #     "--source", image_path, 
-    #     "--project", output_dir,  # Save results in the temporary output directory
-    #     "--name", "test_results",
-    #     "--exist-ok"  # Allow overwriting existing results
-    # ]
     
     # Run the detection script
     result = subprocess.run(command, check=True)
