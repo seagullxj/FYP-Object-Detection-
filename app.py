@@ -21,7 +21,8 @@ def run_yolov7_detection(image_path):
     if os.path.exists(image_path):
         print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO")
         # raise FileNotFoundError(f"Temporary image file {image_path} does not exist.")
-    
+    if os.path.exists("yolov7/runs/train/yolov710/weights/best.pt"):
+        print("BYEEEEEEEEEEEEE")
     # Call the YOLOv7 detection script via subprocess
     command = [
         "python", detect_script, 
