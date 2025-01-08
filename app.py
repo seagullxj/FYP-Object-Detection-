@@ -20,7 +20,7 @@ def run_yolov7_detection(image_path):
 
     # Call the YOLOv7 detection script via subprocess
     command = [
-        "--python", detect_script, 
+        "python", detect_script, 
         "--weights", "yolov7/runs/train/yolov710/weights/best.pt", 
         "--conf", "0.5", 
         "--img-size", "640", 
