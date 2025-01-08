@@ -1,8 +1,0 @@
-train: ./data/train
-val: ./data/val
-
-# number of classes
-nc: 3
-
-# class names
-names: ['broken','defect','good']
