@@ -28,9 +28,13 @@ Follow these steps to set up the project on your local machine:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-
+git clone <repo name>
+```bash
+### 2. Create Virtual Environment (Optional)
+```bash
+python -m venv env
+source env/bin/activate    # On Linux/Mac
+env\Scripts\activate       # On Windows
 
 ### Design Highlights:
 1. **Clear Headers:** Sections are clearly defined for readability.
