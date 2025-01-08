@@ -10,7 +10,7 @@ from streamlit_image_zoom import image_zoom
 def run_yolov7_detection(image_path):
     # Path to your YOLOv7 detect.py script
     detect_script = "yolov7/detect.py"
-    python_path = "env1/Scripts/python.exe"
+    # python_path = "env1/Scripts/python.exe"
     # Make sure the script exists
     if not Path(detect_script).exists():
         raise FileNotFoundError(f"{detect_script} not found. Ensure you have the YOLOv7 repository cloned.")
@@ -20,7 +20,7 @@ def run_yolov7_detection(image_path):
 
     # Call the YOLOv7 detection script via subprocess
     command = [
-        python_path, detect_script, 
+        "--python", detect_script, 
         "--weights", "yolov7/runs/train/yolov710/weights/best.pt", 
         "--conf", "0.5", 
         "--img-size", "640", 
