@@ -40,6 +40,7 @@ env\Scripts\activate       # On Windows
 ### 3. Install Required Packages
 ```bash
 pip install -r requirements.txt
+pip install -r yolov7/requirements.txt
 ```
 
 ### 4. Run the Application
