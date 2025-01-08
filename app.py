@@ -30,13 +30,22 @@ def run_yolov7_detection(image_path):
         "--conf", "0.5", 
         "--img-size", "640", 
         "--source", image_path, 
-        "--project", output_dir,  # Save results in the temporary output directory
-        "--name", "test_results",
         "--exist-ok"  # Allow overwriting existing results
     ]
+
+    #     command = [
+    #     "python", detect_script, 
+    #     "--weights", "yolov7/runs/train/yolov710/weights/best.pt", 
+    #     "--conf", "0.5", 
+    #     "--img-size", "640", 
+    #     "--source", image_path, 
+    #     "--project", output_dir,  # Save results in the temporary output directory
+    #     "--name", "test_results",
+    #     "--exist-ok"  # Allow overwriting existing results
+    # ]
     
     # Run the detection script
-    result = subprocess.run(command, check=True, capture_output=True, text=True)
+    result = subprocess.run(command, check=True)
     print(result.stdout)  # To see standard output
     print(result.stderr)  # To see error output
 
@@ -44,6 +53,7 @@ def run_yolov7_detection(image_path):
     output_image_dir = os.path.join(output_dir, "test_results")
     if not os.path.exists(output_image_dir):
         raise FileNotFoundError(f"Output directory {output_image_dir} not found.")
+        
 
     # Find the latest .jpg file in the output directory
     output_images = list(Path(output_image_dir).glob("*.jpg"))
