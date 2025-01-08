@@ -29,12 +29,23 @@ Follow these steps to set up the project on your local machine:
 
 ```bash
 git clone <repo name>
-```bash
+```
 ### 2. Create Virtual Environment (Optional)
 ```bash
 python -m venv env
 source env/bin/activate    # On Linux/Mac
 env\Scripts\activate       # On Windows
+```
+
+### 3. Install Required Packages
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Application
+```bash
+streamlit run app.py
+```
 
 ### Design Highlights:
 1. **Clear Headers:** Sections are clearly defined for readability.
